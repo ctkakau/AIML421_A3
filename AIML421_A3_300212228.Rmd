@@ -13,7 +13,6 @@ library(knitr)
 library(ggplot2)
 ```
 
-\newpage
 # AIML421 Assignment 3
 
 This project attempts to develop a model to predict music genres of unseen data, based on training over 50,000 rows of data, with 19 features, including the class label (i.e. the song's genre).  
@@ -110,7 +109,7 @@ In designing my system I had just finished working up a neural network using the
 
 ## Dimensionality reduction  
 
-I tried using Principal Component Analysis (PCA), with six components, that resulted in around 40% of the variance explained.  I manually removed numerous features (i.e. dummy features from encoded 'key', 'time_signature', 'mode') and retained numeric features that looked to have good variability and clustering from the scatterplots (i.e. 'popularity', 'tempo', 'danceabiilty', 'acousticness', and 'valence').  These features explained around 70% of the variance, with three components. In spite of the improved performance, Figure \@ref(fig:pcas) shows no obvious clustering with either six (left) or three (right) principal components.
+I tried using Principal Component Analysis (PCA), with six components, that resulted in around 40% of the variance explained.  I manually removed numerous features (i.e. dummy features from encoded 'key', 'time_signature', 'mode') and retained numeric features that looked to have good variability and clustering from the scatterplots (i.e. 'popularity', 'tempo', 'danceabiilty', 'acousticness', and 'valence').  These features explained around 70% of the variance, with three components. In spite of the improved performance, Figure @ref(fig:pcas) shows no obvious clustering with either six (left) or three (right) principal components.
 
 ```{r pcas, out.width= "45%", out.height = "45%", fig.cap = "Principal component analysis for six components (left), three components (right)", fig.show="hold", fig.align="center" }
 
@@ -221,9 +220,12 @@ After identifying the best model (and parameters) using GridSearchCV, I would ru
 
 ## Comparison between the class competition and the Residential House Price competition
 
-Comparing the chosen Residential House Price competition with the class competition:      
+Comparing the chosen Residential House Price competition with the class competition:    
+
   - the class competition has a classification task and fairly good quality data (i.e. invalid values are limited to two features), whereas the Residential House Prices competition is a regression task   
+  
   - the machine learning models are fundamentally the same (apart from regressor vs classifier variants) allowing for the use of the same libraries (i.e. sklearn for machine learning tasks, matplotlib or seaborn for visualisation etc.)  
+  
   - the datasets are similar (once encoded) although the music dataset will have very high number of dummy features from the 'artist_name', 'track_name' and 'track_id' features.
   
 Overall, these two competitions are very similar in terms of data, tasks and preprocessing.  
